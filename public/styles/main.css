@@ -58,7 +58,7 @@ header > a, header > a:visited {
     color: rgb(60, 255, 0);
 } 
 footer {
-    border-top: dashed;
+    border-top: dashed 2px;
 }
 .circle, .circleSmall {
     display: none;
@@ -125,3 +125,13 @@ button:hover, input[type="submit"]:hover{
 button:active, input[type="submit"]:active{
     transform: scale(0.9);
 }
+@media (width <= 1250px) {
+    #returnDisplayUserNPassW {
+        border: none !important;
+        transform: scale(0.8);
+    }
+    .circleSmall {
+        transform: scale(0.7);
+    }
+}
+  
