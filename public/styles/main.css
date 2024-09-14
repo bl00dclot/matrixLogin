@@ -1,5 +1,34 @@
 body {
     margin: 0;
+    background-color: black;
+}
+header, footer{
+    background-color: black;
+    color:rgb(42, 180, 0);
+    font-family: "VT323", monospace;
+    text-align: center;
+    font-size: 1.5rem;
+    border-style:dashed;
+    border-width: 2px;
+    border-color: rgb(42, 180, 0);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+header > a {
+    text-decoration: inherit;
+    color: inherit;
+    cursor:pointer;
+}
+header > a:visited {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: pointer;
+} 
+footer {
+    border-top: dashed;
+    border-bottom: none;
+    border-width: 2px;
 }
 .circle {
     display: none;
@@ -18,10 +47,12 @@ body {
 .circle:hover{
     transform: scale(1.06);
     transition: 0.2s;
+    cursor: pointer;
 }
 .circle:active{
     transform: scale(0.96);
     transition: 0.1s;
+    cursor: pointer;
 }
 .circleSmall {
     display: block;
@@ -41,10 +72,12 @@ body {
 .circleSmall:hover{
     transform: scale(0.36);
     transition: 0.2s;
+    cursor: pointer;
 }
 .circleSmall:active{
     transform: scale(0.29);
     transition: 0.1s;
+    cursor: pointer;
 }
 #pageBox{
     display: flex;
@@ -55,6 +88,24 @@ body {
     height: 90vh;
 
     margin: 0;
+}
+.box{
+    background-color: transparent;
+    padding: 30px;
+    position: absolute;
+    border-style:dashed;
+    border-width: 2px;
+    border-color: rgb(60, 255, 0);
+    border-top: none;
+    border-bottom: none;
+    border-top-left-radius: 15%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 15%;
+    font-family: "VT323", monospace;
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: rgb(60, 255, 0);
 }
 #signInRegisterBox {
     display: none;
@@ -74,7 +125,23 @@ body {
     border-bottom-left-radius: 50%;
     border-bottom-right-radius: 15%;
 }
-button{
+input[type="text"], input[type="password"] {
+    background-color: transparent;
+    color: rgb(60, 255, 0);
+    font-family: "VT323", monospace;
+    font-weight: 500;
+    font-size: 1.5rem;
+    border-width: 2px;
+    border-color: rgb(60, 255, 0);
+    border-style: none none dashed none;
+    border-bottom-right-radius: 15%;
+}
+input[type="text"]:focus, input[type="password"]:focus{
+    background-color: transparent;
+    outline:none;
+    box-shadow:0px 2px 2px rgb(42, 180, 0);
+}
+button, input[type="submit"]{
     font-family: "VT323", monospace;
     font-weight: 500;
     font-size: 1.5rem;
@@ -93,11 +160,13 @@ button{
     border-bottom-right-radius: 0%;
     transition: 0.2s;
 }
-button:hover{
+button:hover, input[type="submit"]:hover{
     transform: scale(1.1);
     transition: 0.2s;
+    cursor: pointer;
 }
-button:active{
+button:active, input[type="submit"]:active{
     transform: scale(0.9);
     transition: 0.1s;
+    cursor: pointer;
 }

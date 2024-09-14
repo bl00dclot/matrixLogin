@@ -1,1 +1,33 @@
-z
+<%- include("partials/header.ejs") %>
+
+
+
+<div id="pageBox">
+    <% if (locals.displayUserN && locals.displayPassW) { %>
+        <div style="text-align: center;" id="returnDisplayUserNPassW" class="box">
+            <p style="margin-right: 100px;">Log: <%= ip %> <br> <%= currentDate %></p>
+            <h1>404 Profile
+                <h2>"<%= displayUserN %>"<br>
+                    "<%= displayPassW %>"</h2>
+            not found</h1>
+            
+
+            
+        </div>
+    <% } else { %>
+        <div id="loginBox" class="box">
+            <form action="/loginsubmit" method="POST">
+                <label for="username">Username:</label><br>
+                <input type="text" id="username" name="username"><br>
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password" required><br><br>
+                <input type="submit" value="Login">
+            </form>
+    </div>
+    <% } %>
+   
+</div>
+
+<script src="script/signInScript.js" charset="UTF-8"></script>
+
+<%- include("partials/footer.ejs") %>
