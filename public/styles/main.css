@@ -2,35 +2,65 @@ body {
     margin: 0;
     background-color: black;
 }
-header, footer{
-    background-color: black;
-    color:rgb(42, 180, 0);
-    font-family: "VT323", monospace;
-    text-align: center;
-    font-size: 1.5rem;
-    border-style:dashed;
-    border-width: 2px;
+header, footer, .box, #signInRegisterBox, button, input[type="submit"]{
+    border-style:dashed;    
+}
+header, footer, button, input[type="submit"] {
     border-color: rgb(42, 180, 0);
-    border-top: none;
     border-left: none;
     border-right: none;
 }
-header > a {
+header, footer, .box, input[type="text"], input[type="password"], button, input[type="submit"] {
+    font-family: "VT323", monospace;
+    font-size: 1.5rem;
+}
+header, footer, .box, #signInRegisterBox, input[type="text"], input[type="password"] {
+    border-width: 2px;
+}
+header, footer, .box, #signInRegisterBox {
+    border-top: none;
+}
+header, footer {
+    background-color: black;
+    color:rgb(42, 180, 0);
+    text-align: center;
+}
+footer, .box, #signInRegisterBox {
+    border-bottom: none;
+}
+header > a, header > a:visited {
     text-decoration: inherit;
     color: inherit;
     cursor:pointer;
-}
-header > a:visited {
-    text-decoration: inherit;
-    color: inherit;
+} 
+.circle, .circleSmall, .circle:hover, .circle:active, .circleSmall:hover, .circleSmall:active, button, input[type="submit"], button:hover, input[type="submit"]:hover, button:active, input[type="submit"]:active {
+    transition: 0.2s;
     cursor: pointer;
+}
+#pageBox, #signInRegisterBox {
+    justify-content: center;
+    align-items: center;
+}
+.box, #signInRegisterBox, input[type="text"], input[type="password"], input[type="text"]:focus, input[type="password"]:focus, button, input[type="submit"] {
+    background-color: transparent;
+    border-color: rgb(60, 255, 0);
+}
+.box, #signInRegisterBox {
+    border-top-left-radius: 15%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 15%;
+    padding: 30px;
+    position: absolute;
+}
+.box, input[type="text"], input[type="password"], button, input[type="submit"] {
+    font-weight: 500;
+    color: rgb(60, 255, 0);
 } 
 footer {
     border-top: dashed;
-    border-bottom: none;
-    border-width: 2px;
 }
-.circle {
+.circle, .circleSmall {
     display: none;
     width: 100px;
     height: 100px;
@@ -41,132 +71,57 @@ footer {
     radial-gradient( transparent 10%, transparent 45%, rgb(42, 180, 0) 60%, black 40%),
     repeating-linear-gradient(90deg,transparent, rgba(42, 180, 0, 0.753) , transparent) 0px 0px / 100px 100px;
     background-repeat: no-repeat;
-    transition: 0.2s;
 }
 
 .circle:hover{
     transform: scale(1.06);
-    transition: 0.2s;
-    cursor: pointer;
 }
 .circle:active{
     transform: scale(0.96);
-    transition: 0.1s;
-    cursor: pointer;
 }
 .circleSmall {
-    display: block;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    box-shadow: 1px 1px 10px rgb(42, 180, 0), 1px -1px 10px rgb(42, 180, 0), -1px 1px 10px rgb(42, 180, 0), -1px -1px 10px rgb(42, 180, 0);
-    background:
-    linear-gradient(black, rgb(0, 0, 0)) 45px 19px / 8px 60px, 
-    radial-gradient( transparent 10%, transparent 45%, rgb(42, 180, 0) 60%, black 40%),
-    repeating-linear-gradient(90deg,transparent, rgba(42, 180, 0, 0.753) , transparent) 0px 0px / 100px 100px;
-    background-repeat: no-repeat;
-    transition: 0.2s;
     transform: scale(0.3);
     align-self:baseline;
 }
 .circleSmall:hover{
     transform: scale(0.36);
-    transition: 0.2s;
-    cursor: pointer;
 }
 .circleSmall:active{
     transform: scale(0.29);
-    transition: 0.1s;
-    cursor: pointer;
 }
 #pageBox{
     display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: rgb(0, 0, 0);
     width: 100vw;
     height: 90vh;
-
-    margin: 0;
-}
-.box{
-    background-color: transparent;
-    padding: 30px;
-    position: absolute;
-    border-style:dashed;
-    border-width: 2px;
-    border-color: rgb(60, 255, 0);
-    border-top: none;
-    border-bottom: none;
-    border-top-left-radius: 15%;
-    border-top-right-radius: 50%;
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 15%;
-    font-family: "VT323", monospace;
-    font-weight: 500;
-    font-size: 1.5rem;
-    color: rgb(60, 255, 0);
 }
 #signInRegisterBox {
     display: none;
-    justify-content: center;
-    align-items: center;
     gap: 20px;
-    background-color: transparent;
-    padding: 30px;
-    position: absolute;
-    border-style:dashed;
-    border-width: 2px;
-    border-color: rgb(60, 255, 0);
-    border-top: none;
-    border-bottom: none;
-    border-top-left-radius: 15%;
-    border-top-right-radius: 50%;
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 15%;
 }
+
 input[type="text"], input[type="password"] {
-    background-color: transparent;
-    color: rgb(60, 255, 0);
-    font-family: "VT323", monospace;
-    font-weight: 500;
-    font-size: 1.5rem;
-    border-width: 2px;
-    border-color: rgb(60, 255, 0);
     border-style: none none dashed none;
     border-bottom-right-radius: 15%;
 }
 input[type="text"]:focus, input[type="password"]:focus{
-    background-color: transparent;
     outline:none;
     box-shadow:0px 2px 2px rgb(42, 180, 0);
 }
 button, input[type="submit"]{
-    font-family: "VT323", monospace;
-    font-weight: 500;
-    font-size: 1.5rem;
     text-shadow: 1px 1px 1px black, 1px -1px 1px black, -1px 1px 1px black, -1px -1px 1px black;
     color:rgb(60, 255, 0);
     padding: 5px 10px;
-    background-color: transparent;
-    border-style: dashed;
     border-width: 1px;
-    border-color: rgb(42, 180, 0);
-    border-left: none;
-    border-right: none;
     border-top-left-radius: 0%;
     border-top-right-radius: 50%;
     border-bottom-left-radius: 50%;
     border-bottom-right-radius: 0%;
-    transition: 0.2s;
+    margin-left: 10px;
 }
 button:hover, input[type="submit"]:hover{
     transform: scale(1.1);
-    transition: 0.2s;
-    cursor: pointer;
 }
 button:active, input[type="submit"]:active{
     transform: scale(0.9);
-    transition: 0.1s;
-    cursor: pointer;
 }
